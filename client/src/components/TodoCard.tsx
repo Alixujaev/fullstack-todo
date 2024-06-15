@@ -14,7 +14,7 @@ const TodoCard = ({
 }) => {
   const dispatch = useDispatch();
   const handleDelete = (id: string) => {
-    fetch(`http://localhost:8000/delete/${id}`, {
+    fetch(`https://fullstack-todo-beta-p2cdaf5o6-islomali3110gmailcoms-projects.vercel.app/delete/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -30,7 +30,7 @@ const TodoCard = ({
   };
 
   const handleComplete = (id: string) => {
-    fetch(`http://localhost:8000/complete/${id}`, {
+    fetch(`https://fullstack-todo-beta-p2cdaf5o6-islomali3110gmailcoms-projects.vercel.app/complete/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
