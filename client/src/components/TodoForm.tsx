@@ -12,7 +12,7 @@ const TodoForm = () => {
     e.preventDefault();
 
     if (inputRef.current) {
-      fetch(`https://fullstack-todo-beta-p2cdaf5o6-islomali3110gmailcoms-projects.vercel.app/todo`, {
+      fetch(`https://fullstack-todo-blond.vercel.app/todo`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
