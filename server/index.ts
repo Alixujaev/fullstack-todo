@@ -10,24 +10,24 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 8000;
 
-const corsOptions = {
-  origin: 'https://fullstack-todo-blond.vercel.app', // Allow only this origin 
-  optionsSuccessStatus: 200
-};
-
-app.use(cors(corsOptions));
 app.use(express.json());
 
-app.get('/todos', async (req, res) => {
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+})
+
+app.get('/api/todos', async (req, res) => {
   try {
     const todos = await Todos.find();
+    console.log(todos);
+    
     res.send(todos);
   } catch (error) {
     res.status(500).send({ error: 'Failed to fetch todos' });
   }
 });
 
-app.post('/todo', async (req, res) => {  
+app.post('/api/todo', async (req, res) => {  
   try {
     const todo = await Todos.create({
       id: uuidv4(),
@@ -40,7 +40,7 @@ app.post('/todo', async (req, res) => {
   }
 })
 
-app.delete('/delete/:id', async (req, res) => {
+app.delete('/api/delete/:id', async (req, res) => {
   try {
     const todo = await Todos.findByIdAndDelete(req.params.id);
     res.send(todo);
@@ -49,7 +49,7 @@ app.delete('/delete/:id', async (req, res) => {
   }
 })
 
-app.put('/complete/:id', async (req, res) => {
+app.put('/api/complete/:id', async (req, res) => {
   try {
     const todo = await Todos.findByIdAndUpdate(req.params.id, {
       completed: req.body.completed
