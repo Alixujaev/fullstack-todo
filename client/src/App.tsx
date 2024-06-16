@@ -12,7 +12,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetch("/api/todos", {
+    fetch("https://fullstack-todo-blond.vercel.app/api/todos", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
