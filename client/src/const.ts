@@ -14,3 +14,10 @@ export type CreateTodoPayload = {
   id: string;
   completed: boolean;
 }
+
+
+export type Todo = {
+  title: string;
+  _id: string;
+  completed: boolean;
+}

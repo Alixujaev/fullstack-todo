@@ -3,9 +3,12 @@ import TodoCard from "./components/TodoCard";
 import TodoForm from "./components/TodoForm";
 import { useEffect } from "react";
 import { setTodos } from "./action/todo";
+import { Todo } from "./const";
 
 function App() {
-  const { todos } = useSelector((state) => state.todos);
+  const { todos }: { todos: Todo[] } = useSelector(
+    (state: { todos: Todo[] }) => state
+  );
   const dispatch = useDispatch();
 
   useEffect(() => {
