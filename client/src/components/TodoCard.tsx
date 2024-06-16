@@ -22,7 +22,7 @@ const TodoCard = ({
     })
       .then((res) => res.json())
       .then(() => {
-        dispatch(deleteTodo(id));
+        dispatch(deleteTodo({ _id: id }));
       })
       .catch((error) => {
         console.error("Error deleting todo:", error);

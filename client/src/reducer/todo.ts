@@ -5,7 +5,7 @@ const initialState = {
 }
 
 
-export const todos = (state = initialState, action: { type: TodoStatus, payload: unknown}) => {
+export const todos = (state = initialState, action: { type: TodoStatus, payload: {_id: string}}) => {
   switch (action.type) {
     case TodoStatus.CREATE_TODO:
       return {
@@ -31,7 +31,7 @@ export const todos = (state = initialState, action: { type: TodoStatus, payload:
     case TodoStatus.DELETE_TODO:
       return {
         ...state,
-        todos: state.todos.filter((todo: { _id: string }) => todo._id !== action.payload)
+        todos: state.todos.filter((todo: { _id: string }) => todo._id !== action.payload._id)
       }
   
     default:

@@ -22,9 +22,9 @@ export const completeTodo = (todo: CreateTodoPayload) => {
 }
 
 
-export const deleteTodo = (id: string) => {
+export const deleteTodo = (item: {_id: string}) => {
   return {
     type: TodoStatus.DELETE_TODO,
-    payload: id
+    payload: item
   }
 }
