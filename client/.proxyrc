@@ -1,0 +1,5 @@
+{
+  "/api": {
+    "target": "https://fullstack-todo-blond.vercel.app"
+  }
+}
