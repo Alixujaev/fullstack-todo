@@ -12,7 +12,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetch("http://localhost:8000/todos", {
+    fetch("https://fullstack-todo-6.onrender.com/todos", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
