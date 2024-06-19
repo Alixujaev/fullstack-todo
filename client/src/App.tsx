@@ -6,13 +6,13 @@ import { setTodos } from "./action/todo";
 import { Todo } from "./const";
 
 function App() {
-  const { todos }: { todos: Todo[] } = useSelector(
-    (state: { todos: Todo[] }) => state
+  const { todos }: { todos: { todos: Todo[] } } = useSelector(
+    (state: { todos: { todos: Todo[] } }) => state
   );
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetch("https://fullstack-todo-blond.vercel.app/todos", {
+    fetch("http://localhost:8000/todos", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -31,11 +31,11 @@ function App() {
     <div className="max-w-[430px] mx-auto pt-28">
       <TodoForm />
 
-      <h2 className="text-white mb-4">Tasks to do - {todos.length}</h2>
+      <h2 className="text-white mb-4">Tasks to do - {todos.todos.length}</h2>
 
-      {todos.length ? (
+      {todos.todos.length ? (
         <div className="mb-6">
-          {todos.map(
+          {todos.todos.map(
             (todo: { _id: string; title: string; completed: boolean }) => (
               <TodoCard key={todo._id} {...todo} />
             )
