@@ -2,7 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import * as dotenv from 'dotenv';
-import Todos from './models/Todos';
+import Todos from '../models/Todos';
 import { v4 as uuidv4 } from 'uuid';
 
 dotenv.config();
