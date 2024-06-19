@@ -14,7 +14,7 @@ const TodoCard = ({
 }) => {
   const dispatch = useDispatch();
   const handleDelete = (id: string) => {
-    fetch(`https://fullstack-todo-blond.vercel.app/delete/${id}`, {
+    fetch(`http://localhost:8000/delete/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -30,7 +30,7 @@ const TodoCard = ({
   };
 
   const handleComplete = (id: string) => {
-    fetch(`https://fullstack-todo-blond.vercel.app/complete/${id}`, {
+    fetch(`http://localhost:8000/complete/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

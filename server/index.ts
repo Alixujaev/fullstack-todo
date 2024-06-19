@@ -11,7 +11,7 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 
 const corsOptions = {
-  origin: 'https://fullstack-todo-blond.vercel.app', // Allow only this origin 
+  origin: 'http://localhost:5173', // Allow only this origin 
   optionsSuccessStatus: 200
 };
 
